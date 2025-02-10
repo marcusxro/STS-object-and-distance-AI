@@ -4,13 +4,10 @@ import math
 import time
 from ultralytics import YOLO
 
-# Initialize webcam
 cap = cv2.VideoCapture(0)
 
-# Load YOLO model
 model = YOLO("../Yolo-Weights/yolov8n.pt")
 
-# Define class names
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
               "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
@@ -28,7 +25,7 @@ object_sizes = {
     "bottle": 7.5,
     "keyboard": 45,
     "book": 20,
-     "person": 50,  # Average shoulder width
+     "person": 50, 
     "car": 180,
     "motorbike": 200,
     "bus": 350,
@@ -97,8 +94,8 @@ object_sizes = {
 
 }
 
-# Focal length (pre-calibrated, adjust if necessary)
-focal_length = 1000  # Adjust based on your camera calibration
+
+focal_length = 1000  # camera calibration
 
 prev_frame_time = 0
 
